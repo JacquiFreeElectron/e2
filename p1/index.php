@@ -1,11 +1,3 @@
-<h1>Mechanics</h1>
-<ul>
-    <li>...</li>
-    <li>...</li>
-</ul>
+<?php
 
-<h1>Results</h1>
-<ul>
-    <li>...</li>
-    <li>...</li>
-</ul>
+require 'index-view.php';
