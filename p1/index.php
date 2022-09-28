@@ -20,9 +20,11 @@ if ($playerA == $playerB){
     }
 } 
 
-// var_dump($playerA);
-// var_dump($playerB);
-// var_dump($result);
-
+// Give accumulative results of our game
+$results [] = [
+    'playerA' => $playerA,
+    'playerB' => $playerB,
+    'result' => $result
+];
 
 require 'index-view.php';

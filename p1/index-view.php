@@ -15,11 +15,16 @@
     </ul>
 
     <h1>Results</h1>
+    <?php foreach($results as $value){ ?>
     <ul>
-        <li>Player A threw: <?php echo $playerA?></li>
-        <li>PLayer B threw: <?php echo $playerB?></li>
-        <li><?php echo $result ?></li>
+        <li>Player A threw: <?php echo $value['playerA']?></li>
+        <li>PLayer B threw: <?php echo $value['playerB']?></li>
+        <li><?php echo $value['result'] ?></li>
     </ul>
+
+    <?php } ?>
+
+
 </body>
 
 </html>
