@@ -23,6 +23,7 @@
     </ul>
 
     <?php } ?>
+    <p><?php echo $finalResult ?></p>
 
 
 </body>

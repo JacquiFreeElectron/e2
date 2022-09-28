@@ -9,6 +9,7 @@
 + Comparing the elements that Player A and Player B chose to pick the winner 
 + The rule is: Rock beats Scissors, Scissors beats Paper, Paper beats Rock
 + if Player A and Player B chose the same thing, they tie
++ Make this game a best of three game
 
 
 ## Outside resources
