@@ -20,11 +20,13 @@
         <button type='submit'>Check answer</button>
     </form>
 
+    <?php if(isset($result)) { ?>
     <h4>Results</h4>
     <?php if($correct) {?>
     correct!
     <?php } else {?>
     wrong!
+    <?php } ?>
     <?php } ?>
 
 </body>
