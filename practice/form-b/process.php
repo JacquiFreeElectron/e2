@@ -1,6 +1,16 @@
 <?php
+
+session_start();
+
 $answer = $_GET['answer'];
 
 $correct = $answer == 'pumpkin';
 
-require 'processview.php';
+$_SESSION['result'] = 
+[
+    'correct' => $correct,
+    'answer' => $answer
+];
+
+//var_dump($_SESSION);
+header('Location: done.php');
