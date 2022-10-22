@@ -8,8 +8,7 @@
 
 <body>
     <h1>Let's Play Rock, Paper, and Scissors!</h1>
-    <p>You are going to play with your computer. This is a best of three game. Please choose your move for round
-        <?php echo ('1')?></p>
+    <p>You are going to play with your computer. Please choose your move : </p>
     <form method='POST' action='process.php'>
         <input type='radio' id='rock' name='choice' value='rock' checked>
         <label for='rock'>rock</label>
