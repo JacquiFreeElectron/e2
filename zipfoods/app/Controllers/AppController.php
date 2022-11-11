@@ -18,6 +18,6 @@ class AppController extends Controller
     public function about()
     {
         
-        return $this->app->view('about', []);
+        return $this->app->view('about');
     }
 }
