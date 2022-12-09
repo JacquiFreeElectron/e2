@@ -18,7 +18,10 @@ class AppController extends Controller
 
     public function process()
     {
-        
+       $this->app->validate([
+       'choice' => 'required'
+        ]);
+
        $choice = $this->app->input('choice');
         
        $computer = ['rock','paper','scissors'][rand(0,2)];
@@ -28,17 +31,33 @@ class AppController extends Controller
        $win = ($choice == 'rock' && $computer == 'scissors') || ($choice == 'scissors' && $computer == 'paper') || ($choice == 'paper' && $computer == 'rock');
        
        // TODO: persist round details to the database
+       $result = [
+        'choice' => $choice,
+        'computer' => $computer,
+        'tie' => ($tie) ? 1 : 0,
+        'win' => ($win) ? 1 : 0
+       ];
+
+       $this->app->db()->insert('rounds', $result);
+
        return $this->app->redirect('/',['choice'=>$choice, 'computer'=>$computer, 'tie'=>$tie, 'win'=>$win]);
 
     }
 
     public function history()
     {
-        return $this->app->view('histroy');
+        $rounds = $this->app->db()->all("rounds");
+
+        return $this->app->view('history',['rounds'=>$rounds]);
     }
 
     public function round()
     {
-        return $this->app->view('round');
+        $id = $this->app->param('id');
+
+        $round = $this->app->db()->findById('rounds',$id);
+
+        return $this->app->view('round',['round'=>$round]);
+
     }
 }
