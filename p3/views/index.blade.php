@@ -7,7 +7,7 @@
 @section('content')
     <h2>Let's Play Rock, Paper, and Scissors!</h2>
     <p>You are going to play with your computer. Please choose your move : </p>
-    <form method='POST' action='/process'>
+    <form method='POST' action="/process">
         <input type='radio' id='rock' name='choice' value='rock'>
         <label for='rock'><img src='/images/rock-svgrepo-com.svg' height=25px width=25px> rock </label>
         <input type='radio' id='paper' name='choice' value='paper'>
@@ -17,4 +17,25 @@
 
         <button type='submit'>submit</button>
     </form>
+
+    <a href="/history">History</a>
+
+    @if ($choice)
+        <p id='computer'>The computer chose : <img src='/images/{{ $computer }}-svgrepo-com.svg' height=25px
+                width=25px>
+            {{ $computer }}. You chose : <img src='/images/{{ $choice }}-svgrepo-com.svg' height=25px width=25px>
+            {{ $choice }}</p>
+
+        @if ($tie)
+            <p>Tie! &#129308&#129307</p>
+        @endif
+
+        @if ($win)
+            <p>You Win! &#128079</p>
+        @endif
+
+        @if (!($tie | $win))
+            <p>You Lose! &#128577</p>
+        @endif
+    @endif
 @endsection

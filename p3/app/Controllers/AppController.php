@@ -31,4 +31,14 @@ class AppController extends Controller
        return $this->app->redirect('/',['choice'=>$choice, 'computer'=>$computer, 'tie'=>$tie, 'win'=>$win]);
 
     }
+
+    public function history()
+    {
+        return $this->app->view('histroy');
+    }
+
+    public function round()
+    {
+        return $this->app->view('round');
+    }
 }
