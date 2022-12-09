@@ -8,12 +8,27 @@ class AppController extends Controller
      */
     public function index()
     {
-        return $this->app->view('index');
+        $choice = $this->app->old('choice');
+        $computer = $this->app->old('computer');
+        $tie = $this->app->old('tie');
+        $win = $this->app->old('win');
+        
+        return $this->app->view('index',['choice'=>$choice, 'computer'=>$computer, 'tie'=>$tie, 'win'=>$win]);
     }
 
     public function process()
     {
         
-        return $this->app->view('');
+       $choice = $this->app->input('choice');
+        
+       $computer = ['rock','paper','scissors'][rand(0,2)];
+
+       $tie = $choice == $computer;
+       
+       $win = ($choice == 'rock' && $computer == 'scissors') || ($choice == 'scissors' && $computer == 'paper') || ($choice == 'paper' && $computer == 'rock');
+       
+       // TODO: persist round details to the database
+       return $this->app->redirect('/',['choice'=>$choice, 'computer'=>$computer, 'tie'=>$tie, 'win'=>$win]);
+
     }
 }

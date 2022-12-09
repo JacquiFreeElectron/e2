@@ -9,7 +9,6 @@
     <p>You are going to play with your computer. Please choose your move : </p>
     <form method='POST' action='/process'>
         <input type='radio' id='rock' name='choice' value='rock'>
-
         <label for='rock'><img src='/images/rock-svgrepo-com.svg' height=25px width=25px> rock </label>
         <input type='radio' id='paper' name='choice' value='paper'>
         <label for='paper'><img src='/images/paper-svgrepo-com.svg' height=25px width=25px> paper </label>
