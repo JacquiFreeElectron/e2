@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body id="body-origin">
 
     <header>
         <h1>{{ $app->config('app.name') }}</h1>

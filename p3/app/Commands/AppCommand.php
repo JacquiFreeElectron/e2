@@ -34,10 +34,10 @@ class AppCommand extends Command
     {
         for ($i=0;$i<5;$i++) {
             $round = [
-                'choice' => ['rock','paper','scissors'][rand(0,2)],
-                'computer' => ['rock','paper','scissors'][rand(0,2)],
-                    'win' => rand(0,1),
-                    'tie' => rand(0,1)
+                'choice' => 'rock',
+                'computer' => 'scissors',
+                    'win' => 1,
+                    'tie' => 0
             ];
 
             $this->app->db()->insert('rounds', $round);
